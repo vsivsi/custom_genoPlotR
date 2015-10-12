@@ -1,0 +1,121 @@
+genoPlotR changes
+=================
+
+0.6.1 - 2011-03-30
+------------------
+BUGFIX:
+- Vignette contained non-ASCII characters
+- Fixed an incoherent variable name in arrow_coord
+
+0.6 - 2011-03-16
+------------------
+NEW FEATURES:
+- Added transparency support in apply_color_scheme, which is applied by
+  default.
+- Added a function, artemisColors(), that returns the colors as in Artemis.
+- read_dna_seg_from_file can now read color or colour tags in genbank or embl
+  files.
+- Added experimental support for tree branches annotations.
+BUGFIX:
+- Further corrected a bug occuring when fixed_gap_length was set, and allowing
+  comparisons with 0 rows.
+- Fasta types were incorrectly guessed
+NOTE: some of the features have been released in an intermediate version 0.5.9
+
+0.5.8 - 2011-01-31
+------------------
+NEW FEATURE:
+- The plot area is now clipped, as a workaround to avoid comparisons that
+  are too large.
+BUGFIX:
+- Corrected a bug occuring when fixed_gap_length was set
+
+0.5.7 - 2010-12-16
+------------------
+BUGFIX:
+- Corrected as.dna_seg to prevent factors to slip in and fixed the gene_type
+  verification.
+NEW FEATURE:
+- Changing the color of the dna_labels is possible (not for trees yet)
+
+0.5.6 - 2010-10-04
+------------------
+BUGFIX:
+- Modified the feature parsing algorithm, features with an "_" inside (ex. 
+  misc_feature) were parsed incorrectly.
+
+0.5.5 - 2010-09-27
+------------------
+NEW FEATURES:
+- Added a new gene_type: lines (and the corresponding side_lines)
+- Improved the example for gene_type
+
+0.5.4 - 2010-09-15
+------------------
+BUGFIX:
+- Added some extra checks on mauve input data, and on dna_seg input data
+  to avoid mysterious error messages
+
+0.5.3 - 2010-09-08
+------------------
+Article published in Bioinformatics, added a CITATION file.
+
+0.5.2 - 2010-08-24
+------------------
+NEW FEATURES:
+- Added read_dna_seg_from_fasta, that can read a fasta file and return one
+  segment of the corresponding length
+- Added two arguments to plot_gene_map, to allow to define the minimum gap
+  length and to allow to have fixed gap length but still automating the 
+  placement of the whole segment.
+BUGFIX:
+- Corrected a bug that provoked errors in displaying subsegments that were 
+  closer to each other than the gap length
+
+0.5.1 - 2010-08-19
+------------------
+BUGFIX:
+- Added aliases in the documentation to avoid warnings when compiling
+
+0.5   - 2010-06-14
+------------------
+NEW FEATURES:
+- New argument to plot_gene_map: n_scale_ticks, gives the approx. number of 
+  ticks in the dna_seg_scales
+- New argument to plot_gene_map: scale_cex, allows to change the size
+  of the labels in dna_seg_scales
+- New argument to plot_gene_map: dna_seg_label_cex, allows to change the 
+  size of the labels in the tree or dna_seg_labels
+
+
+0.4.1 - 2010-06-01
+------------------
+BUGFIX:
+- Added support for large phylogenetic trees. Given the mandatory use of
+  enum.phylog to permute the trees to fit the labels with the dna_seg labels,
+  big trees (requiring more than 1000 permutations) broke the program.
+  Now either the tree is permutable, in the right order, or an error is
+  thrown.
+
+0.4   - 2010-04-19 
+------------------
+NEW FEATURES:
+- Add the multisegment support
+- dna_scales, annotations on all the segments, 
+- Generated new examples. 
+
+0.3   - 2010-04-09
+------------------
+NEW FEATURES:
+- On plot_gene_maps, it is now possible to add automatic scale to any or 
+  all dna_segments.
+- It is possible (and recommended) to apply "global" color scheme at the 
+  time of plotting (and not when parsing comparisons).
+INTERNALS:
+- Application of color schemes is now more rational
+- Named every element and viewport, so its easier to navigate
+- Removed dependancies to RColorBrewer
+
+0.2   - 2010-01-11
+------------------
+Initial commit to R-Forge
